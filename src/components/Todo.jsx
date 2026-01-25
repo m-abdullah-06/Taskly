@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import taskChecklistImage from "../assets/task-checklist.png";
 import Todoitems from "./todoitems";
 
 const Todo = () => {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(
+    localStorage.getItem("todoList")
+      ? JSON.parse(localStorage.getItem("todoList"))
+      : [],
+  );
 
   const inputRef = useRef();
 
@@ -25,6 +29,27 @@ const Todo = () => {
     const newTodoList = todoList.filter((todo) => todo.id !== id);
     setTodoList(newTodoList);
   };
+
+  const toggleComplete = (id) => {
+    const newTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isCompleted: !todo.isCompleted };
+      }
+      return todo;
+    });
+    setTodoList(newTodoList);
+  };
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todoList"));
+    if (storedTodos) {
+      setTodoList(storedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   return (
     <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-137.5 rounded-xl">
@@ -52,6 +77,8 @@ const Todo = () => {
             key={todo.id}
             text={todo.text}
             remove={() => remove(todo.id)}
+            toggleComplete={() => toggleComplete(todo.id)}
+            isCompleted={todo.isCompleted}
           />
         ))}
       </div>
