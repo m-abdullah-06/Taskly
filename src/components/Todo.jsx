@@ -9,7 +9,21 @@ const Todo = () => {
 
   const add = () => {
     const inputText = inputRef.current.value.trim();
-    console.log(inputText);
+    const newTodo = {
+      id: new Date().getTime(),
+      text: inputText,
+      isCompleted: false,
+    };
+
+    if (inputText !== "") {
+      setTodoList([...todoList, newTodo]);
+      inputRef.current.value = "";
+    }
+  };
+
+  const remove = (id) => {
+    const newTodoList = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newTodoList);
   };
 
   return (
@@ -33,8 +47,13 @@ const Todo = () => {
         </button>
       </div>
       <div>
-        <Todoitems text="Task 1" />
-        <Todoitems text="Task 2" />
+        {todoList.map((todo) => (
+          <Todoitems
+            key={todo.id}
+            text={todo.text}
+            remove={() => remove(todo.id)}
+          />
+        ))}
       </div>
     </div>
   );
