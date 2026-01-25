@@ -1,16 +1,51 @@
-# React + Vite
+# 📝 Taskly — React To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskly is a simple and efficient to-do list application built with React.js that helps users manage daily tasks with ease.  
+The app focuses on clean UI, smooth user experience, and practical productivity features.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ➕ Add new tasks
+- ✅ Mark tasks as completed
+- ❌ Delete tasks
+- 💾 Saves tasks using browser localStorage
+- ⚡ Fast and responsive UI
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- JavaScript (ES6)
+- HTML5
+- CSS3 / Tailwind CSS (if used)
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/your-username/taskflow.git
+2. Go to project folder
+   cd taskly
+3. Install dependencies
+  npm install
+4. Start development server
+  npm run dev
+
+What I Learned
+
+1. React component structure
+2. useState and useEffect hooks
+3. Managing application state
+4. Working with localStorage
+5. Rendering lists using map()
+6. Event handling in React
+
+🎯 Future Improvements
+
+1.Edit tasks
+2. Task categories or priorities
+3. Due dates & reminders
+4. Dark mode
+5. Drag and drop sorting
+
+👨‍💻 Author
+Muhammad Abdullah
