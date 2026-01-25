@@ -1,4 +1,4 @@
-# 📝 Taskly — React To-Do List App
+# 📝 Taskly | React To-Do List App
 
 Taskly is a simple and efficient to-do list application built with React.js that helps users manage daily tasks with ease.  
 The app focuses on clean UI, smooth user experience, and practical productivity features.
@@ -16,7 +16,7 @@ The app focuses on clean UI, smooth user experience, and practical productivity 
 - React.js
 - JavaScript (ES6)
 - HTML5
-- CSS3 / Tailwind CSS (if used)
+- CSS3 / Tailwind CSS
 
 ## 📦 Installation & Setup
 
